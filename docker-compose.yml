@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  uploader:
+    build:
+      context: ./
+      target: prod
+    working_dir: /app
+    user: nextjs
+    stdin_open: true
+    restart: always
+    ports:
+      - "80:3000"
+    command: yarn start
